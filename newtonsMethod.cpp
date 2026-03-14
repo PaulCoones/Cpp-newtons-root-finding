@@ -5,7 +5,8 @@ Newton's Method. */
 #include <stdexcept>
 
 /* newtonsMethod(func, derivFunc, initGuess epsilon) Returns an approximation to the root of the function func up to an 
-   error tolerance epsilon using Newton's Method. Provided the functions derivative derivFunc and an initial guess initGuess. */
+   error tolerance epsilon between iterates using Newton's Method, provided the functions derivative derivFunc and 
+   an initial guess initGuess. */
 // Requires: epsilon > 0
 //           derivFunc is not too flat (approx = 0) near our guesses
 long double newtonsMethod(
@@ -30,19 +31,19 @@ long double newtonsMethod(
     return newGuess;
 }
 
-// A sample of how you may test such a program
-#include <iostream>
-long double testFunc(long double x) {
-    return x*x + 2*x - 8; // Roots at x = -4 and x = +2
-}
+// // A sample of how you may test such a program
+// #include <iostream>
+// long double testFunc(long double x) {
+//     return x*x + 2*x - 8; // Roots at x = -4 and x = +2
+// }
 
-long double testFuncDeriv(long double x) {
-    return 2*x + 2;
-}
+// long double testFuncDeriv(long double x) {
+//     return 2*x + 2;
+// }
 
-int main(void) {
-    long double root = newtonsMethod(testFunc, testFuncDeriv, -1.01, 1e-3);
-//  Guess at x = -0.99 should give root = -4, and x = 1.01 should give root = +2 
-    std::cout << "The estimated root of the provided function is x* = " << root << std::endl;
-    return 0;
-}
+// int main(void) {
+//     long double root = newtonsMethod(testFunc, testFuncDeriv, -1.01, 1e-3);
+// //  Guess at x = -0.99 should give root = -4, and x = 1.01 should give root = +2 
+//     std::cout << "The estimated root of the provided function is x* = " << root << std::endl;
+//     return 0;
+// }
