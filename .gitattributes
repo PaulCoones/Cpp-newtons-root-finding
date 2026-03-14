@@ -1,0 +1,4 @@
+* text=auto
+
+# Make C++ files use LF on all systems
+*.cpp text eol=lf
